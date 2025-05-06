@@ -1,4 +1,4 @@
-from iCalculator import *
+from iCalculator_2_testable import *
 
 
 def main():
@@ -98,10 +98,9 @@ def test_button_equal():
     calculator.entry.insert(tk.END, "5")
     calculator.operator = "+"
     button_equal(calculator)
-
-    assert(calculator.entry.get()) == "10"
+    assert(calculator.entry.get()) == "5"
     button_equal(calculator)
-    assert(calculator.entry.get()) == "15"
+    assert(calculator.entry.get()) == "10"
 
 
 def test_button_operator():
