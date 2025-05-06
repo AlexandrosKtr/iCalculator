@@ -261,8 +261,13 @@ def button_equal(calculator):
     toggle(calculator)
 
     if calculator.operator:
-        curr = calculator.temp + calculator.operator + calculator.entry.get()
-        calculator.temp = calculator.operator + calculator.entry.get()
+        if calculator.temp:
+            curr = calculator.temp + calculator.operator + calculator.entry.get()
+            calculator.temp = calculator.operator + calculator.entry.get()
+        else:
+            calculator.temp = calculator.entry.get()
+            curr = calculator.temp + calculator.operator + calculator.entry.get()
+            calculator.temp = calculator.operator + calculator.entry.get()
     else:
         curr = calculator.entry.get() + calculator.temp
 
